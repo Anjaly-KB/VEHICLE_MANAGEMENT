@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{%block body_block%}
+    <div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <div class="col-2"></div>
+                <div class="col-8"><h2><i class="text-primary">Add A New Vehicle</i><h2/></div>
+                <div class="col-2"></div>
+                
+                <form action="" method="post">
+                    {%csrf_token%}
+                    {{form.as_p}}
+                    <button type="submit" class="btn btn-outline-primary">ADD</button>
+                </form>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+{%endblock%}
