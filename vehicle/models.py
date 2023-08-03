@@ -9,7 +9,7 @@ from django.db import models
 class Vehicles(models.Model):
     name=models.CharField(max_length=100)
     number=models.CharField(max_length=100)
-    type=models.PositiveIntegerField()
+    type=models.IntegerField()
     model=models.CharField(max_length=100)
     description=models.CharField(max_length=100)
 

@@ -22,5 +22,9 @@ urlpatterns = [
     path("register",views.SignUpView.as_view(),name='register'),
     path("login",views.LoginView.as_view(),name="signin"),
     path("vehicle/add",views.VehicleCreateView.as_view(),name="add"),
-    path("vehicle/list",views.VehicleListView.as_view(),name="index")
+    path("vehicle/list",views.VehicleListView.as_view(),name="index"),
+    path("vehicle/change/<int:id>",views.VehicleEditView.as_view(),name="change"),
+    path("vehicle/remove/<int:id>",views.VehicleDeleteView.as_view(),name="delete"),
+    path("logout",views.signout,name="signout")
+    
 ]

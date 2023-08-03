@@ -1,6 +1,20 @@
 {%extends 'base.html'%}
 {%block body_block%}  
     <div class="container">
+
+        <div class="row">
+            <h2>{{request.user}}</h2>
+            <div class="col-4"></div>
+            <div class="col-4">
+                {%if messages%}
+                    {%for msg in messages%}
+                        {{msg}}
+                    {%endfor%}
+                {%endif%}
+            </div>
+            <div class="col-4"></div>
+
+
         <div class="row">
             <div class="col-2"></div>
             <div class="col-8">
@@ -20,9 +34,8 @@
                             <td>{{vehicle.model}}</td>
                             <td>{{vehicle.description}}</td>
                             <td>
-                                {% comment %} <a href="{%url 'book-detail' book.id%}" class="btn btn-outline-info">Details</a> {% endcomment %}
-                                {% comment %} <a href="{%url 'book-delete' book.id%}" class="btn btn-outline-danger">Remove</a>
-                                <a href="{%url 'book-change' book.id%}" class="btn btn-outline-primary">Edit</a> {% endcomment %}
+                                <a href="{%url 'change' vehicle.id%}" class="btn btn-outline-primary">Edit</a>
+                                <a href="{%url 'delete' vehicle.id%}" class="btn btn-outline-danger">Remove</a>
                             </td>
                            
                         </tr>
